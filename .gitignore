@@ -1,8 +1,5 @@
 .DS_Store
 
-cache/*
-logs/*
-
 composer.lock
 
 /vendor/
