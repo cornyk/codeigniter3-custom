@@ -70,6 +70,7 @@ Class Cimongo
 	 *  and other parameters (for example, active_config_group).
 	 */
 	const CONFIG_FILE_NAME  = 'mongodb';
+	const DEV_CONFIG_FILE_NAME = 'dev/mongodb';
 	const CONFIG_ARRAY_NAME = 'mongo_db';
 
 	/**
@@ -4137,7 +4138,11 @@ Class Cimongo
 	private function config(array $manual_config = []): self
 	{
 		// Config data from file /configs/mongo_db.php.
-		$this->CodeIgniter->load->config(self::CONFIG_FILE_NAME);
+		if ( ENVIRONMENT === 'dev' ) {
+			$this->CodeIgniter->load->config(self::DEV_CONFIG_FILE_NAME);
+		} else {
+			$this->CodeIgniter->load->config(self::CONFIG_FILE_NAME);
+		}
 		$file_config = $this->CodeIgniter->config->item(self::CONFIG_ARRAY_NAME);
 
 		// Config group name: one of some variants of a config group name.

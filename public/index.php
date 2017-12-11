@@ -48,12 +48,11 @@
  * This can be set to anything, but default usage is:
  *
  *     development
- *     testing
  *     production
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'dev');
 
 /*
  *---------------------------------------------------------------
@@ -65,13 +64,12 @@
  */
 switch (ENVIRONMENT)
 {
-	case 'development':
+	case 'dev':
 		error_reporting(-1);
 		ini_set('display_errors', 1);
 	break;
 
-	case 'testing':
-	case 'production':
+	case 'prod':
 		ini_set('display_errors', 0);
 		if (version_compare(PHP_VERSION, '5.3', '>='))
 		{

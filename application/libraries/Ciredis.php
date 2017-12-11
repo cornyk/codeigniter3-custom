@@ -49,7 +49,11 @@ class Ciredis {
 	{
 		log_message('debug', 'Redis Class Initialized');
 		$this->_ci = get_instance();
-		$this->_ci->load->config('redis');
+		if ( ENVIRONMENT === 'dev' ) {
+			$this->_ci->load->config('dev/redis');
+		} else {
+			$this->_ci->load->config('redis');
+		}
 		// Check for the different styles of configs
 		if (isset($params['connection_group']))
 		{
