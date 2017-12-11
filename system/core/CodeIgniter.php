@@ -369,9 +369,11 @@ if ( ! is_php('5.4'))
 		return CI_Controller::get_instance();
 	}
 
-	if (file_exists(APPPATH.'core/'.$CFG->config['subclass_prefix'].'Controller.php'))
-	{
-		require_once APPPATH.'core/'.$CFG->config['subclass_prefix'].'Controller.php';
+	foreach ($CFG->config['subclass_prefix'] as $value) {
+		if (file_exists(APPPATH.'core/'.$value.'Controller.php'))
+		{
+			require_once APPPATH.'core/'.$value.'Controller.php';
+		}
 	}
 
 	// Set a mark point for benchmarking
