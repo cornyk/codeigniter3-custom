@@ -369,7 +369,7 @@ if ( ! is_php('5.4'))
 		return CI_Controller::get_instance();
 	}
 
-	foreach ($CFG->config['subclass_prefix'] as $value) {
+	foreach ($CFG->config['subcontroller_prefix'] as $value) {
 		if (file_exists(APPPATH.'core/'.$value.'Controller.php'))
 		{
 			require_once APPPATH.'core/'.$value.'Controller.php';

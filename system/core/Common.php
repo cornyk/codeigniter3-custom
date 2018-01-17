@@ -168,7 +168,18 @@ if ( ! function_exists('load_class'))
 		}
 
 		// Is the request a class extension? If so we load it too
-		foreach (config_item('subclass_prefix') as $value) {
+		if (file_exists(APPPATH.$directory.'/'.config_item('subclass_prefix').$class.'.php'))
+		{
+			$name = config_item('subclass_prefix').$class;
+
+			if (class_exists($name, FALSE) === FALSE)
+			{
+				require_once(APPPATH.$directory.'/'.$name.'.php');
+			}
+		}
+
+		foreach (config_item('subcontroller_prefix') as $value)
+		{
 			if (file_exists(APPPATH.$directory.'/'.$value.$class.'.php'))
 			{
 				$name = $value.$class;
