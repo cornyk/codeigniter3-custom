@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+$config['base_url'] = '/';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '/';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -379,7 +379,7 @@ $config['encryption_key'] = '';
 |
 */
 $config['sess_driver'] = 'files';
-$config['sess_cookie_name'] = 'apollo_sess';
+$config['sess_cookie_name'] = 'CISESS';
 $config['sess_expiration'] = 7200;
 $config['sess_save_path'] = BASEPATH.'../runtime/session';
 $config['sess_match_ip'] = FALSE;

@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $config['template_dir']    = APPPATH."views";
 
 // 编译文件路径
-$config['compile_dir']     = BASEPATH."../runtime/smarty";
+$config['compile_dir']     = BASEPATH."../runtime/smarty_compile";
 
 // smarty左标签
 $config['left_delimiter']  = '<{';

@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 require_once( BASEPATH.'../third_party/smarty/Smarty.class.php' );
 
-class Cismarty extends Smarty {
+class CI_Smarty extends Smarty {
 
     protected $ci;
 
